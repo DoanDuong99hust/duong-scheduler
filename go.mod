@@ -1,9 +1,9 @@
-module github.com/Huang-Wei/sample-scheduler-extender
+module duong-scheduler
 
-go 1.13
+go 1.16
 
 require (
-	github.com/julienschmidt/httprouter v1.2.0
-	k8s.io/api v0.18.3
-	k8s.io/kube-scheduler v0.18.3
+	github.com/julienschmidt/httprouter v1.3.0
+	k8s.io/api v0.21.0
+	k8s.io/kube-scheduler v0.21.0
 )
