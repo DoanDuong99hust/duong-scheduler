@@ -7,14 +7,14 @@ ENV GOOS=linux
 ENV GOARCH=amd64
 
 # build
-WORKDIR /go/src/duong-scheduler
+WORKDIR /go/src/simple-scheduler
 COPY go.mod .
 COPY go.sum .
 RUN GO111MODULE=on go mod download
 COPY . .
-RUN go install -ldflags "-s -w -X main.version=$VERSION" duong-scheduler
+RUN go install -ldflags "-s -w -X main.version=$VERSION" simple-scheduler
 
 # runtime image
 FROM gcr.io/google_containers/ubuntu-slim:0.14
-COPY --from=builder /go/bin/duong-scheduler /usr/bin/duong-scheduler
-ENTRYPOINT ["duong-scheduler"]
+COPY --from=builder /go/bin/simple-scheduler /usr/bin/simple-scheduler
+ENTRYPOINT ["simple-scheduler"]

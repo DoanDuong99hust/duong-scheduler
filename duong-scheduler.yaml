@@ -58,7 +58,7 @@ spec:
         - --address=0.0.0.0
         - --leader-elect=false
         - --scheduler-name=duong-scheduler
-        image: 29061999/duong-scheduler-1:latest
+        image: a/b:c
         livenessProbe:
           httpGet:
             path: /healthz
